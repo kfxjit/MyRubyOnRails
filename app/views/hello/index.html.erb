@@ -2,6 +2,7 @@
 <p><%= @msg %></p>
 <%= form_tag(controller: "hello", action: "index") do %>
   <%= select_tag('s1',
-    options_for_select(["Windows", "macOS", "Linux"])) %>
+  options_for_select(["Windows", "macOS", "Linux"]),
+  {size:5, multiple:true, class:"form-control"}) %>
   <%= submit_tag("Click") %>
 <% end %>
