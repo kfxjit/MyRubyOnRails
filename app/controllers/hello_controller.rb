@@ -13,9 +13,9 @@ class HelloController < ApplicationController
   end
 
   # not needed method
-  =begin
-  def other
-    redirect_to action: :index, params: {'msg': 'from other page'}
-  end
-  =end
+  #begin
+  #def other
+  #  redirect_to action: :index, params: {'msg': 'from other page'}
+  #end
+  #=end
 end
