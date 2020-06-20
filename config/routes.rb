@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'people/add', to: 'people#create'
   get 'people/:id', to: 'people#show'
   get 'people/edit/:id', to: 'people#edit'
-  post 'people/edit/:id', to: 'people#update'
+  patch 'people/edit/:id', to: 'people#update'
   get 'msgboard', to: 'msgboard#index'
   post 'msgboard', to: 'msgboard#index'
   get 'msgboard/index'
