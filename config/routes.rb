@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'people/index'
   get 'msgboard', to: 'msgboard#index'
   post 'msgboard', to: 'msgboard#index'
   get 'msgboard/index'
