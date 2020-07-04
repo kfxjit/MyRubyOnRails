@@ -57,10 +57,12 @@ class PeopleController < ApplicationController
       #@people = Person.where "age >= ? and age <= ?", f[0], f[1] # multiple search
       #f = '%' + params[:find] + '%' # or expression
       #@people = Person.where "name like ? or mail like ?", f, f #or expression
-      f = '%' + params[:find] + '%'
-      result = Person.where "name like ? or mail like ?", f, f
-      @people.push result.first
-      @people.push result.last
+      #f = '%' + params[:find] + '%' #first last data
+      #result = Person.where "name like ? or mail like ?", f, f #first last data
+      #@people.push result.first #first last data
+      #@people.push result.last #first last data
+      f = params[:find].split(',')
+      @people = Person.find(f)
     end
   end
 
