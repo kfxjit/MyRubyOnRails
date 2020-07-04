@@ -63,9 +63,13 @@ class PeopleController < ApplicationController
       #@people.push result.last #first last data
       #f = params[:find].split(',') #search multiple id
       #@people = Person.find(f) #search multiple id
-      f = params[:find].split(',') #setting data order
-      @people = Person.where('name like ?', #setting data order
-        '%' + params[:find] + '%').order 'age asc' #setting data order
+      #f = params[:find].split(',') #setting data order
+      #@people = Person.where('name like ?', #setting data order
+      #  '%' + params[:find] + '%').order 'age asc' #setting data order
+      f = params[:find].split(',') #get a part of result
+      @people = Person.all.limit(f[0]).offset(f[1]) #get a part of result
+    else #get a part of result
+      @people = Person.all #get a part of result
     end
   end
 
