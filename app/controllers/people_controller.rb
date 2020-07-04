@@ -49,7 +49,7 @@ class PeopleController < ApplicationController
     if request.post? then
       #obj = Person.find params['find'] # with id
       #@people.push obj # with id
-      #@people = Person.where name: params[:find]
+      #@people = Person.where name: params[:find] # where seach
       @people = Person.where "age >= ?", params[:find] # with expression
     end
   end
