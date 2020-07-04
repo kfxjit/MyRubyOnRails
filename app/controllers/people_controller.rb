@@ -51,8 +51,10 @@ class PeopleController < ApplicationController
       #@people.push obj # with id
       #@people = Person.where name: params[:find] # where search
       #@people = Person.where "age >= ?", params[:find] # with expression
-      @people = Person.where "mail like ?",
-      '%' + params[:find] + '%'
+      #@people = Person.where "mail like ?", # with like search
+      #'%' + params[:find] + '%' #with like search
+      f = params[:find].split ',' # multiple search
+      @people = Person.where "age >= ? and age <= ?", f[0], f[1] # multiple search
     end
   end
 
