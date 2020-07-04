@@ -25,6 +25,15 @@ Rails.application.routes.draw do
   patch 'people/edit/:id', to: 'people#update'
   get 'people/delete/:id', to: 'people#delete'
 
+  get 'messages/index'
+  get 'messages', to: 'messages#index'
+  get 'messages/add'
+  post 'messages/add', to: 'messages#create'
+  get 'messages/edit/:id', to: 'messages#edit'
+  patch 'messages/edit/:id', to: 'messages#update'
+  get 'messages/delete/:id', to: 'messages#delete'
+  get 'messages/:id', to: 'messages#show'
+
   get 'msgboard', to: 'msgboard#index'
   post 'msgboard', to: 'msgboard#index'
   get 'msgboard/index'
