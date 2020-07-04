@@ -61,8 +61,11 @@ class PeopleController < ApplicationController
       #result = Person.where "name like ? or mail like ?", f, f #first last data
       #@people.push result.first #first last data
       #@people.push result.last #first last data
-      f = params[:find].split(',')
-      @people = Person.find(f)
+      #f = params[:find].split(',') #search multiple id
+      #@people = Person.find(f) #search multiple id
+      f = params[:find].split(',') #setting data order
+      @people = Person.where('name like ?', #setting data order
+        '%' + params[:find] + '%').order 'age asc' #setting data order
     end
   end
 
