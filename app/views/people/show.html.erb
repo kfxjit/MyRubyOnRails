@@ -2,14 +2,20 @@
 <p><%= @msg %></p>
 <table class="table">
   <tr><th>Id</th>
-   <td><%= @data.id %></td></tr>
- <tr><th>Name</th>
-   <td><%= @data.name %></td></tr>
- <tr><th>Age</th>
-   <td><%= @data.age %></td></tr>
- <tr><th>Mail</th>
-   <td><%= @data.mail %></td></tr>
- <tr><th>Message</th>
-   <td><%= @data.message != nil ? @data.message.title : 'none' %></td></tr>
- </tr>
+    <td><%= @data.id %></td></tr>
+  <tr><th>Name</th>
+    <td><%= @data.name %></td></tr>
+  <tr><th>Age</th>
+    <td><%= @data.age %></td></tr>
+  <tr><th>Mail</th>
+    <td><%= @data.mail %></td></tr>
+  <tr><th>Message</th>
+    <td>
+    <% if @data.message != nil then %>
+      <% @data.message.each do |obj| %>
+        <%= '「' + obj.title + '」' %>
+      <% end %>
+    <% end %>
+    </td></tr>
+  </tr>
 </table>
